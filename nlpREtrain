@@ -1,0 +1,64 @@
+import joblib
+from nlpTrain import preprocess 
+
+# Load the pre-trained model and vectorizer
+clf = joblib.load('disrespect_model.joblib')
+vectorizer = joblib.load('tfidf_vectorizer.joblib')
+
+# Load and preprocess new datasets
+new_datasets = [
+    
+]
+
+for i, new_data in enumerate(new_datasets, start=1):
+    print(f"\nTraining on New Dataset {i}")
+
+    X_new = [preprocess(sentence) for (sentence, label) in new_data]
+    y_new = [label for (sentence, label) in new_data]
+
+    # TF-IDF Vectorization on the new data
+    X_new_vectorized = vectorizer.transform(X_new)
+
+    # Retrain the model on the new data
+    clf.fit(X_new_vectorized, y_new)
+
+    # Save the updated model
+    joblib.dump(clf, f'updated_disrespect_model_{i}.joblib')
+
+# Example usage
+new_sentence = "stop telling people they are stupid"
+new_sentence = preprocess(new_sentence)
+new_sentence_vectorized = vectorizer.transform([new_sentence])
+prediction = clf.predict(new_sentence_vectorized)[0]
+
+print(f"\nPrediction: {prediction}")
+
+
+import joblib
+from nlpTrain import preprocess  # Import preprocess from nlptrain
+
+# Load the pre-trained model and vectorizer
+clf = joblib.load('disrespect_model.joblib')
+vectorizer = joblib.load('tfidf_vectorizer.joblib')
+
+# Load and preprocess a single new dataset
+new_dataset = [
+    # Load your new dataset here
+]
+
+print("\nTraining on New Dataset")
+
+# Assuming new_dataset is a list of tuples (sentence, label)
+X_new = [preprocess(sentence) for (sentence, label) in new_dataset]
+y_new = [label for (sentence, label) in new_dataset]
+
+# TF-IDF Vectorization on the new data
+X_new_vectorized = vectorizer.transform(X_new)
+
+# Retrain the model on the new data
+clf.fit(X_new_vectorized, y_new)
+
+# Save the updated model
+joblib.dump(clf, 'updated_disrespect_model.joblib')
+
+print("New data set trained please rename updated_disrespect_model.joblib to disrespect_model.joblib")
