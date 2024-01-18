@@ -58,7 +58,7 @@ To install and set up the Discord bot on your server, follow these steps:
 
 Explore the project's capabilities by watching the demo video and diving into the detailed report:
 
-- **Demo Video:** Watch our 🚀 demonstration video to get an overview of the Discord Bot's features.
+- **Demo Video:** Watch our 🚀 demonstration [video](https://github.com/xxEBxx/Discord-Bot/blob/main/Demo_Report/Demo%20Bot%20comp.mp4) to get an overview of the Discord Bot's features.
 - **Report:** Read the detailed 📝 project [report](https://github.com/xxEBxx/Discord-Bot/blob/main/Demo_Report/REPORT.pdf) for insights into the development and functionality.
 - **Presentation:** View our 🖥️ PowerPoint presentation to dive deeper into the project's architecture and key features. [ALGO.pptx](https://github.com/xxEBxx/Discord-Bot/files/13982223/ALGO.pptx)
 
